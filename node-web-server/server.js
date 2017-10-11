@@ -7,6 +7,19 @@ var app = express();
 // Tell express to the the hbs view engine  for handlebars
 app.set('view engine', 'hbs');
 
+// hbs tells handlebars to use partials
+hbs.registerPartials(__dirname + '/views/partials'); // __dirname stores the path to your projects directory
+
+// hbs tells handlebars to use this helpers for getCurrentYear.
+// This helps you reduce repeated code. You use these in your partials.
+hbs.registerHelper('getCurrentYear', () => {
+  return new Date().getFullYear()
+})
+
+hbs.registerHelper('screamIt', (text) => {
+  return text.toUpperCase();
+})
+
 // Add middleware
 app.use(express.static(__dirname + '/public')); // __dirname stores the path to your projects directory
 
@@ -19,8 +32,7 @@ app.get('/', (req, res) => {  // request , response
 
     // Dynamic data you can send to templates
     pageTitle: 'Home Page',
-    welcomeMessage: 'Welcome to my website',
-    currentYear: new Date().getFullYear()
+    welcomeMessage: 'Welcome to my website'
   });
 });
 
@@ -31,8 +43,7 @@ app.get('/about', (req, res) => {
   res.render('about.hbs', {
 
     // Dynamic data you can send to templates
-    pageTitle: 'About Page',
-    currentYear: new Date().getFullYear()
+    pageTitle: 'About Page'
   });
 })
 
