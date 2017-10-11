@@ -12,7 +12,8 @@ This will install all the node_modules from my package.json
 Both app.js and app-promise.js can be used the same way. <br />
 The app will take in an address from the user like: node app.js -a (address)  or node app-promise.js -a (address)<br />
 The address could just be zipcode, street number and name (this must be entered as a string), or city and state. <br />
-See attached weatherApp.JPG for input/output layout.
+See attached appOutput.JPG for input/output layout for app.js.
+See attached app-promiseOutput.JPG for input/output layout for app-promise.js
 
 
 
