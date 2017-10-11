@@ -1,3 +1,8 @@
+/*
+This app allows you to use a library (request) that doesnt support promises
+and wrap it in a promise
+*/
+
 const request = require('request');
 
 var geoCodeAddress = (address) => {
@@ -31,7 +36,7 @@ var geoCodeAddress = (address) => {
   });
 };
 
-geoCodeAddress('191f6').then((location) => {
+geoCodeAddress('19146').then((location) => {
   console.log(JSON.stringify(location, undefined, 2));
 }, (errorMessage) => {
   console.log(errorMessage);

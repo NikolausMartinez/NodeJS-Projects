@@ -1,3 +1,7 @@
+/*
+This app uses callbacks with request method
+*/
+
 const yargs = require('yargs');
 const geoCode = require('./geoCode/geoCode');
 const weather = require('./weather/weather');
