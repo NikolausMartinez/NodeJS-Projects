@@ -41,6 +41,11 @@ axios.get(geoCodeUrl).then((response) => {
   var weatherUrl = 'https://api.darksky.net/forecast/7ea97f16e8dfa760014a315027478313/' + lat + ',' + lng;
 
   // Outputs the formated address from the Google geocode API
+  console.log('');
+  console.log('*******************');
+  console.log('* ADDRESS ENTERED *');
+  console.log('*******************');
+  console.log('');
   console.log(response.data.results[0].formatted_address);
 
   // We return another promise to make a request for the weather data from DarkSki API
@@ -49,11 +54,27 @@ axios.get(geoCodeUrl).then((response) => {
 }).then((response) => {
 
   // Variables to hold data received from the DarkSky API
+  var summary = response.data.currently.summary;
   var temperature = response.data.currently.temperature;
   var apparentTemperature = response.data.currently.apparentTemperature;
-
+  var dewPoint = response.data.currently.dewPoint;
+  var humidity = Math.round(response.data.currently.humidity * 100);
+  var windSpeed = response.data.currently.windSpeed;
+  var cloudCover = Math.round(response.data.currently.cloudCover * 100);
+  
   // Outputs the data received from the DarkSky API
-  console.log('It is currently ' + temperature + '. It feels like ' + apparentTemperature + '.');
+  console.log('');
+  console.log('*******************');
+  console.log('* CURRENT WEATHER *');
+  console.log('*******************');
+  console.log('');
+  console.log('It is currently ' + temperature + ' °F. It feels like ' + apparentTemperature + ' °F.');
+  console.log('Summary: ' + summary);
+  console.log('Dew Point: ' + dewPoint);
+  console.log('Humidity: ' + humidity + ' %');
+  console.log('Wind Speed: ' + windSpeed + ' mph');
+  console.log('Cloud Cover: ' + cloudCover + ' %');
+  console.log('');
 
   // Catches all the error
 }).catch((e) => {
