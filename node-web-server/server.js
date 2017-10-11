@@ -77,6 +77,12 @@ app.get('/about', (req, res) => {
   });
 })
 
+app.get('/projects', (req, res) => {
+  res.render('projects.hbs', {
+    pageTitle: 'Projects'
+  });
+});
+
 // Creating a error route
 app.get('/error', (req, res) => {
   // res.send is basic express to go to templates
