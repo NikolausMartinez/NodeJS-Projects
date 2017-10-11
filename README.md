@@ -1,4 +1,4 @@
-# Basic Weather App
+# Basic Weather App using Google geocode and DarkSki API's
 
 # I didn't updload the node_modules I used for this app to GitHub
 You need install all the node_modules from my package.json <br />
