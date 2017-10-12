@@ -1,0 +1,22 @@
+{
+  "name": "nodejs-projects",
+  "version": "1.0.0",
+  "description": "https://www.udemy.com/the-complete-nodejs-developer-course-2/learn/v4/overview",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha **/*test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NikolausMartinez/NodeJS-Projects.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NikolausMartinez/NodeJS-Projects/issues"
+  },
+  "homepage": "https://github.com/NikolausMartinez/NodeJS-Projects#readme",
+  "devDependencies": {
+    "mocha": "^3.0.0"
+  }
+}
